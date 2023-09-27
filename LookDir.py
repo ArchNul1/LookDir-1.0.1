@@ -26,7 +26,7 @@ class Menu:
         
         else:
             print(colored(f'\n\n>>>>>>>>>>O ARQUIVO{path} NAO EXISTE<<<<<<<<<<<<<<<\n\n.', 'red'))
-            
+            return None
 
 
     #Verifica se existe o diretorio, verificando se o codigo response e 200
@@ -39,7 +39,7 @@ class Menu:
             self.wordlist = input(colored("\n\nDIGITE O CAMINHO DA WORDLIST: ", 'green'))
             self.wordlist = self.wordlist_local(self.wordlist)
             print(colored('#' * 50, 'blue'))
-            print('\n')
+            print('\n\n')
 
             #leitura da wordlist e cada dir em tempo real que esta sendo verificado 
             with open(self.wordlist, 'r') as arquivos:
