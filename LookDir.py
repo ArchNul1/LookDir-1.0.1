@@ -99,7 +99,7 @@ class Menu:
                     self.buscar_info()
 
                 elif self.opt == 3:
-                    print(colored("Obrigado por usar o LookDir! Até a próxima.", "green"))
+                    print(colored("Obrigado por usar o LookDir!", "green"))
                     sys.exit()
                 else:
                     print(colored("Digite uma opção válida, 1, 2 ou 3 ", 'red'))
