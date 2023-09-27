@@ -1,32 +1,44 @@
-ᒪOOKᗪIᖇ
+<!-- Título do Projeto -->
+# LookDir - Explorador de Diretórios
 
+<!-- Descrição do Projeto -->
+LookDir é uma ferramenta simples, mas funcional, que permite explorar diretórios em um site e obter informações básicas sobre um site, como data de criação e registro.
 
+<!-- Tópicos ou Índice -->
+## Tópicos
+- [Visão Geral](#visão-geral)
+- [Como Usar](#como-usar)
+- [Requisitos](#requisitos)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+- [Contato](#contato)
 
-**LookDir** é uma ferramenta simples de linha de comando que oferece funcionalidades úteis para reconhecimento de segurança em sites. 
-Com foco na exploração de diretórios e na busca de informações WHOIS de um alvo, o LookDir foi projetado para simplificar tarefas comuns de análise de segurança na web.
+<!-- Visão Geral -->
+## Visão Geral
+LookDir é uma ferramenta simples, mas eficaz, que pode ser usada para explorar diretórios em sites e obter informações sobre o site.
 
-**Funcionalidades Principais**:
-**Exploração de Diretórios**: Utilize uma wordlist personalizável para verificar a existência de diretórios em um site-alvo. 
-A ferramenta mostrará em tempo real os diretórios sendo verificados e informará quando encontrar diretórios com status HTTP 200.
+<!-- Como Usar -->
+## Como Usar
+1. Clone o repositório: `git clone https://github.com/seu-usuario/LookDir.git`
+2. Navegue até o diretório: `cd LookDir`
+3. Execute o script: `python LookDir.py`
 
-**Busca de Informações WHOIS**: Obtenha informações detalhadas sobre um domínio, incluindo data de criação, nome do registrante, data de expiração e informações de contato do registrante.
+<!-- Requisitos -->
+## Requisitos
+- Python 3.x
+- Bibliotecas Python: requests, pyfiglet, termcolor, whois, tqdm
 
-**Como Usar**:
-Clone este repositório.
-Execute o script Python menu.py e siga o menu interativo.
+<!-- Contribuição -->
+## Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) e enviar pull requests para melhorar este projeto.
 
-**Requisitos**:
-Python 3.x
-Bibliotecas Python: requests, pyfiglet, termcolor, whois, tqdm.
+<!-- Licença -->
+## Licença
+Este projeto é licenciado sob a [Licença MIT](LICENSE).
 
-**Contribuição**:
-Contribuições são bem-vindas! Sinta-se à vontade para relatar problemas, sugerir melhorias ou criar pull requests para tornar esta ferramenta ainda melhor.
-
-**Aviso Legal**:
-Este software destina-se apenas a fins educacionais e de teste. Use-o com responsabilidade e obtenha as permissões necessárias antes de realizar qualquer teste em sites que não sejam de sua propriedade.
-
-
-
+<!-- Contato -->
+## Contato
+- Archboot07
 
 
 
