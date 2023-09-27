@@ -76,7 +76,7 @@ class Menu:
                 elif voltar.lower() == "não":
                     sys.exit()  # Encerra o programa
                 else:
-                    print(colored("Por favor, digite 'sim' ou 'não'.", "red"))
+                    print(colored("Digite sim ou não.", "red"))
             except Exception as e:
                 print(colored("Erro:", 'red'), e)
 
@@ -95,12 +95,12 @@ class Menu:
                     self.buscar_info()
 
                 elif self.opt == 3:
-                    print(colored("Obrigado por usar o LookDir! Até a próxima.", "green"))
+                    print(colored("LOOKDIR", "green"))
                     sys.exit()
                 else:
-                    print(colored("Digite uma opção válida, 1, 2 ou 3 ", 'red'))
+                    print(colored("Digite uma opção válida ", 'red'))
             except ValueError:
-                print(colored("Digite uma opção válida, 1, 2 ou 3 ", 'red'))
+                print(colored("Digite uma opção válida ", 'red'))
 
 
 
