@@ -26,7 +26,7 @@ class Menu:
         
         else:
             print(colored(f'\n\n>>>>>>>>>>O ARQUIVO{path} NAO EXISTE<<<<<<<<<<<<<<<\n\n.', 'red'))
-            return run.verificar_dir()
+            
 
 
     #Verifica se existe o diretorio, verificando se o codigo response e 200
@@ -37,9 +37,9 @@ class Menu:
             print(colored('#' * 50, 'red'))
 
             self.wordlist = input(colored("\n\nDIGITE O CAMINHO DA WORDLIST: ", 'green'))
-            self.wordlist = self.verificar_dir(self.wordlist)
+            self.wordlist = self.wordlist_local(self.wordlist)
             print(colored('#' * 50, 'blue'))
-            print('\n\n')
+            print('\n')
 
             #leitura da wordlist e cada dir em tempo real que esta sendo verificado 
             with open(self.wordlist, 'r') as arquivos:
@@ -48,13 +48,13 @@ class Menu:
                 for dir in tqdm(leitura_wordlist, desc="Verificando diretórios"):
                     dir = dir.strip()
 
-                    sys.stdout.write("\r" + colored('Verificando:', 'red') + colored(f'{self.url}/{dir}', 'green'))
+                    sys.stdout.write("\r" + colored('Verificando:', 'red') + colored(f'{self.url_alvo}/{dir}', 'green'))
                     sys.stdout.flush()
 
-                    response = requests.get(f'{self.url}/{dir}')
+                    response = requests.get(f'{self.url_alvo}/{dir}')
 
                     if response.status_code == 200:
-                        print(colored(f'\n\n{self.url}/{dir}', 'blue') + colored(' ENCONTRADO', 'green') + '\n')
+                        print(colored(f'\n\n{self.url_alvo}/{dir}', 'green') + colored(' ENCONTRADO', 'blue') + '\n')
                         print(colored('#' * 50, 'blue'))
 
         except Exception as e:
@@ -64,7 +64,6 @@ class Menu:
     def buscar_info(self):
         self.url = input(colored("\nURL ALVO: ", "green"))
         busca = whois.whois(self.url)
-        print(colored("\nINFORMAÇÕES WHOIS:", 'green'))
         print(colored(busca, 'green'))
 
 
@@ -96,7 +95,7 @@ class Menu:
                     self.buscar_info()
 
                 elif self.opt == 3:
-                    print(colored("Obrigado por usar o LookDir!", "green"))
+                    print(colored("Obrigado por usar o LookDir! Até a próxima.", "green"))
                     sys.exit()
                 else:
                     print(colored("Digite uma opção válida, 1, 2 ou 3 ", 'red'))
