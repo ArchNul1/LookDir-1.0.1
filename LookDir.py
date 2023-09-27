@@ -65,10 +65,7 @@ class Menu:
         self.url = input(colored("\nURL ALVO: ", "green"))
         busca = whois.whois(self.url)
         print(colored("\nINFORMAÇÕES WHOIS:", 'green'))
-        print(colored(f"Data de Criação: {busca.creation_date[0] if isinstance(busca.creation_date, list) else busca.creation_date}", 'blue'))
-        print(colored(f"Nome de Registro: {busca.registrant_name}", 'blue'))
-        print(colored(f"Data de Expiração: {busca.expiration_date}", 'blue'))
-        print(colored(f"Contato do Registrante: {busca.registrant_contact}", 'blue'))
+        print(colored(busca, 'green'))
 
 
         # Opção de voltar ou sair do programa após a verificação
