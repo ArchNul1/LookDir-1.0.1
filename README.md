@@ -2,7 +2,8 @@
 # LookDir - Explorador de Diretórios
 
 <!-- Descrição do Projeto -->
-LookDir é uma ferramenta simples, mas funcional, que permite explorar diretórios em um site e obter informações básicas sobre um site, como data de criação e registro.
+LookDir é uma ferramenta simples, mas funcional, que permite explorar diretórios ocultos ou esquecidos em um site.
+
 
 <!-- Tópicos ou Índice -->
 ## Tópicos
