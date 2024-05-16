@@ -15,7 +15,7 @@ LookDir é uma ferramenta simples, mas funcional, que permite explorar diretóri
 
 <!-- Visão Geral -->
 ## Visão Geral
-LookDir é uma ferramenta simples, mas eficaz, que pode ser usada para explorar diretórios em sites e obter informações sobre o site.
+LookDir é uma ferramenta simples, mas eficaz, que pode ser usada para explorar diretórios em sites e obter informações sobre seus diretores ocultos.
 
 <!-- Como Usar -->
 ## Como Usar
@@ -26,7 +26,7 @@ LookDir é uma ferramenta simples, mas eficaz, que pode ser usada para explorar 
 <!-- Requisitos -->
 ## Requisitos
 - Python 3.x
-- Bibliotecas Python: requests, pyfiglet, termcolor, whois, tqdm
+- Bibliotecas Python: requests, pyfiglet, termcolor, tqdm, argparse, threading 
 
 <!-- Contribuição -->
 ## Contribuição
