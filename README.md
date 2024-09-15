@@ -27,7 +27,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issue
 ## Licença
 Este projeto é licenciado sob a [Licença MIT](LICENSE).
 
-##Isenção de Responsabilidade
+## Isenção de Responsabilidade
 
 O uso da ferramenta LookDir é de total responsabilidade do usuário. Esta ferramenta foi desenvolvida com o propósito de facilitar a exploração de diretórios, sendo fornecida "como está", sem garantias de qualquer tipo, expressas ou implícitas.
 
