@@ -7,10 +7,8 @@ from termcolor import colored
 class Requesition(LookDir):
     def __init__(self) -> None:
         super().__init__()
-        self.semaphore = asyncio.Semaphore(self.max_threads)
-        
+
     async def request_GET(self, session, dir: str) -> None:
-        async with self.semaphore:
             try:
                 async with session.get(f"{self.url}{dir}") as response:
                     if response.status in range(200, 399):
