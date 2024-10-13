@@ -1,40 +1,26 @@
 from .Requisition import Requesition
-from threading import Thread
+import aiohttp
+import asyncio
 
 class Threads(Requesition):
-    #Herdando de Requisition
-    def __init__(self) -> None:
+    def __init__(self, max_threads=4) -> None:
         super().__init__()
-        #inicializando o set parametro
         self.set_param()
-        #lista de Thread
-        self.thread_list = []
+        self.max_threads = max_threads
+        self.wordlist = []  # Inicializando wordlist / Initializing wordlist
 
     def read_arq(self):
         try:
-            with open(f"{self.path}", "r+") as arq:
-                #lendo wordlist e dividindo em duas atraves do index 
-                self.wordlist = arq.read()
-                self.division_wordlist = len(self.wordlist) // 2
-        except:
-            raise FileExistsError("Arquivo inexistente")
-       
-    # Metodo para inicializar, criar as threds, fazer a leitura da wordlist divider ela em 2 para cada thred
-    def thred_request(self) -> None:
-        #tenta fazer a leitura do arquivo wordlist que esta no caminho self.path 
-        try:
-            #wordlist com a primeira metade
-            wordlist_1 = self.wordlist[:self.division_wordlist]
-            #wordlist com a segunda metade
-            wordlist_2 = self.wordlist[self.division_wordlist:]
+            with open(self.path, "r+") as arq:
+                self.wordlist = arq.read().splitlines()  # Convertendo para lista / Converting to list
+        except FileNotFoundError:
+            raise FileNotFoundError("file Not exist")  # Arquivo inexistente / File does not exist
 
-            #definindo o metodo para as threds   
-            for wordlist_part in [wordlist_1, wordlist_2]:
-                dir = "".join(wordlist_part)
-                #passando o metodo e o parametro de request_get
-                th = Thread(target=self.request_GET, args=(dir.split(),))
-                self.thread_list.append(th)
-                th.start()
-                    
-        except:
-           print("Wordlist não reconhecida ou inexistente")
+    async def thred_request(self):
+        self.read_arq()  # Lendo o arquivo antes de executar as threads / Reading the file before executing the threads
+        timeout = aiohttp.ClientTimeout(total=5)  # Exemplo de timeout de 5 segundos
+        async with aiohttp.ClientSession(timeout=timeout) as session:  # Criando uma sessão uma vez / Creating a session once
+            tasks = []
+            for dir in self.wordlist:  # Loop pelas palavras / Loop through the words
+                tasks.append(self.request_GET(session, dir))  # Adiciona tarefas à lista / Add tasks to the list
+            await asyncio.gather(*tasks)  # Executa todas as tarefas / Execute all tasks

@@ -13,7 +13,7 @@ class Painel:
         print(colored("\tBy:Arch_0x3f5",'cyan'))
         print(colored("\tDiscord:Arch_0x3f5",'cyan'))
         print(colored("\tGitHub:Archboot07",'cyan'))
-        print(colored("\nURL: -u \\Wordlist: -w  \\Path: -p \\Numb_Thread: -t\n",'blue'))
+        print(colored("\nurl: -u \\Wordlist: -w  \\Path: -p \\Metodo: -g\n",'blue'))
 
     
 
